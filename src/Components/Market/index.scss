@@ -1,0 +1,59 @@
+.container{
+    // max-width: 1580px;
+    margin: 40px auto;
+    display: flex;
+}
+.wrapper{
+
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+    gap: 20px;
+}
+.basketwrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+    gap: 20px;
+}
+.card{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    li{
+        margin: 5px;
+    }
+}
+.basket{
+    width: 20%;
+    padding: 20px;
+}
+.market{
+    width: 80%;
+    padding: 20px;
+}
+button{
+    width: 50px;
+    height: 30px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    outline: none;
+    background-color: white;
+    margin: 5px 5px;
+    transition: 300ms;
+    &:hover{
+        background-color: black;
+        color: white;
+    }
+}
+h3{
+    text-transform: uppercase;
+}

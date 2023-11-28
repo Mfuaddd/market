@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import useLocalStorage from "../../hook/useLocalStorage";
+import "./index.scss"
 
 function Market() {
   const [fetchData, setFetchData] = useState([]);
@@ -45,29 +46,33 @@ function Market() {
     }
 
   return (
-    <>
-      <div>
+    <div className="container">
+      <div className="basket">
         <h3>basket</h3>
+        <ul className="basketwrapper">
         {basket.map((x) => {
+          
           return (
-            <ul key={x.id}>
+            <ul className="card" key={x.id}>
               <li>{x.id}</li>
               <li>{x.name}</li>
-              <li>count: {x.count}</li>
-              <button onClick={() => addBasket(x)}>+</button>
               <button onClick={() => removeBasket(x)}>-</button>
+              <span>{x.count}</span>
+              <button onClick={() => addBasket(x)}>+</button>
               <button onClick={() => allremoveBasket(x)}>del</button>
             </ul>
           );
+          
         })}
+        </ul>
       </div>
       <hr />
-      <div>
-        <h3>data</h3>
-        <ul>
+      <div className="market">
+        <h3>market</h3>
+        <ul className="wrapper">
           {fetchData.map((x) => {
             return (
-              <ul key={x.id}>
+              <ul className="card" key={x.id}>
                 <li>{x.id}</li>
                 <li>{x.name}</li>
                 <button onClick={() => addBasket(x)}>add</button>
@@ -76,7 +81,7 @@ function Market() {
           })}
         </ul>
       </div>
-    </>
+    </div>
   );
 }
 
